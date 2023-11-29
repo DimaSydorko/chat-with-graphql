@@ -1,0 +1,75 @@
+#----------Objects---------
+type User {
+    id: String!
+    name: String!
+    forumsIds: [String!]!
+    photoUrl: String
+}
+
+type Forum {
+    id: String!
+    name: String!
+    ownerId: String!
+    usersIds: [String!]!
+    users: [User!]!
+    messagesIds: [String!]!
+}
+
+type Message {
+    id: String!
+    text: String!
+    ownerId: String!
+    owner: User!
+    forumId: String!
+    sendingTime: String!
+}
+
+#-----------Query----------
+
+type Query {
+    getAllUsers: [User!]!
+    getAllForums: [Forum!]!
+    getAllMessages: [Message!]!
+    getJoinedForums(userId: String!): [Forum!]!
+    getAvailableForums(userId: String!): [Forum!]!
+    getForumMessages(forumId: String!): [Message!]!
+}
+
+#-----------Mutation----------
+
+type Mutation {
+    createUser(newUser: CreateUserInput!): User!
+    createForum(newForum: CreateForumInput!): Forum!
+    sendMessageInForum(newMessage: SendForumMessageInput!): Message!
+    joinForumById(joinForum: JoinForumInput!): JoinForumResponse!
+}
+
+#-----------Input----------
+
+input CreateUserInput {
+    name: String!
+    photoUrl: String
+}
+
+input CreateForumInput {
+    ownerId: String!
+    name: String!
+}
+
+input JoinForumInput {
+    userId: String!
+    forumId: String!
+}
+
+input SendForumMessageInput {
+    ownerId: String!
+    text: String!
+    forumId: String!
+}
+
+#-----------Response----------
+
+type JoinForumResponse {
+    forum: Forum!
+    user: User!
+}

@@ -1,0 +1,75 @@
+{
+  "users": [
+    {
+      "id": "u-1",
+      "name": "Dmytro Sydorko",
+      "photoUrl": null,
+      "forumsIds": [
+        "f-1"
+      ]
+    },
+    {
+      "id": "u-2",
+      "name": "John Dou",
+      "photoUrl": null,
+      "forumsIds": [
+        "f-1"
+      ]
+    },
+    {
+      "id": "u-3",
+      "name": "Carl White",
+      "photoUrl": null,
+      "forumsIds": []
+    }
+  ],
+  "forums": [
+    {
+      "id": "f-1",
+      "name": "Developers",
+      "ownerId": "u-1",
+      "usersIds": [
+        "u-1",
+        "u-2"
+      ],
+      "messagesIds": [
+        "m-1",
+        "m-2",
+        "m-3"
+      ]
+    },
+    {
+      "id": "f-2",
+      "name": "Testers",
+      "ownerId": "u-1",
+      "usersIds": [
+        "u-1",
+        "u-3"
+      ],
+      "messagesIds": []
+    }
+  ],
+  "messages": [
+    {
+      "id": "m-1",
+      "text": "Hello)",
+      "forumId": "f-1",
+      "ownerId": "u-1",
+      "sendingTime": "Thu Oct 05 2023 11:11:57 GMT+0300 (Eastern European Summer Time)"
+    },
+    {
+      "id": "m-2",
+      "text": "HI!",
+      "forumId": "f-1",
+      "ownerId": "u-2",
+      "sendingTime": "Thu Oct 05 2023 10:30:57 GMT+0300 (Eastern European Summer Time)"
+    },
+    {
+      "id": "m-3",
+      "text": "Nice to meet u)",
+      "forumId": "f-1",
+      "ownerId": "u-1",
+      "sendingTime": "Thu Oct 05 2023 10:11:57 GMT+0300 (Eastern European Summer Time)"
+    }
+  ]
+}

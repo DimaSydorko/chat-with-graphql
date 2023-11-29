@@ -1,0 +1,32 @@
+{
+  "name": "chat-app-backend",
+  "version": "1.0.0",
+  "main": "/src/main.ts",
+  "author": "Dmytro Sydorko",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn codegen && tsc",
+    "codegen": "graphql-codegen --config codegen.ts",
+    "start": "node dist/src/main.js",
+    "dev": "nodemon --watch \"src/**\" --ext \"ts,json,graphql\" --exec \"npm run build && npm run start\" --ignore ./src/__generated__/"
+  },
+  "dependencies": {
+    "@apollo/subgraph": "^2.5.5",
+    "apollo-datasource": "^3.3.2",
+    "apollo-server": "^3.12.1",
+    "graphql": "^16.8.1",
+    "nanoid": "^3.3.6",
+    "nodemon": "^3.0.1"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "5.0.0",
+    "@graphql-codegen/introspection": "4.0.0",
+    "@graphql-codegen/typescript": "4.0.1",
+    "@graphql-codegen/typescript-resolvers": "4.0.1",
+    "@trivago/prettier-plugin-sort-imports": "^4.2.0",
+    "@types/express": "^4.17.18",
+    "prettier": "^3.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}
